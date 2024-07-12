@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  user-service:
+    image: postgres:latest
+    container_name: user-db
+    environment:
+      POSTGRES_DB: users_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./user_data:/var/lib/postgresql/data
+
+  area-service:
+    image: postgres:latest
+    container_name: area-db
+    environment:
+      POSTGRES_DB: areas_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./area_data:/var/lib/postgresql/data
+
+  leisure-area-rental-management-service:
+    image: postgres:latest
+    container_name: leisure-area-rental-management-db
+    environment:
+      POSTGRES_DB: rental_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./rental_management_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3.8-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"  # Porta padrão para AMQP
+      - "15672:15672"  # Porta para o painel de controle do RabbitMQ (Management Plugin)
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"  # Usuário padrão (altere conforme necessário)
+      RABBITMQ_DEFAULT_PASS: "guest"  # Senha padrão (altere conforme necessário)
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq  # Volume para persistir dados do RabbitMQ
+
+volumes:
+  rabbitmq_data:
+    driver: local

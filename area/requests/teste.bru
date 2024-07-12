@@ -1,0 +1,19 @@
+meta {
+  name: teste
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8081/area-rental
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "userId": "eead712c-2ddc-4381-8add-5a1152c1bb5b",
+    "areaId": "051483dc-d1ea-4d8b-a1df-f08a8a587b38",
+    "returnDate": "2020-01-18T00:00"
+  }
+}

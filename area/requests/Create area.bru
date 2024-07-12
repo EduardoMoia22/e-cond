@@ -1,0 +1,18 @@
+meta {
+  name: Create area
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/areas
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Área de lazer",
+    "description": "Área de lazer completa"
+  }
+}

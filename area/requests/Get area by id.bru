@@ -1,0 +1,18 @@
+meta {
+  name: Get area by id
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/areas/051483dc-d1ea-4d8b-a1df-f08a8a587b38
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Área de lazer",
+    "description": "Área de lazer completa"
+  }
+}

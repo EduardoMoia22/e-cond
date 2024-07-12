@@ -1,0 +1,18 @@
+meta {
+  name: Rent area
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://localhost:8080/areas/rent/c9b6f21d-b8e9-4e37-a57e-85cd5b806124
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Área de lazer",
+    "description": "Área de lazer completa"
+  }
+}

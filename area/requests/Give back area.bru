@@ -1,0 +1,18 @@
+meta {
+  name: Give back area
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://localhost:8080/areas/give-back/70ee67b4-c2e2-4920-a0cd-08e2c8ca79aa
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Área de lazer",
+    "description": "Área de lazer completa"
+  }
+}
