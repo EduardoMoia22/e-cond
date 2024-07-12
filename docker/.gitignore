@@ -1,5 +1,5 @@
-./area_data
-./leisure_area_rental_management_data
-./rental_management_data
-./user_data
-./gitignore
+/area_data
+/leisure_area_rental_management_data
+/rental_management_data
+/user_data
+/gitignore
